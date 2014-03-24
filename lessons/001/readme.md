@@ -5,7 +5,7 @@ Basic RIA App Knowledge
 In this lesson we will cover the basics of HTML, CSS, Javascript 
 
 
-### Basic App Structure
+### Basic App Structure in HTML
 ---
 
 #### Basic app setup
