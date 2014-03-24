@@ -180,3 +180,22 @@ sic HTML tags
     <nav>
         //nav stuff here
     </nav>
+
+---
+
+## Project
+
+Create a hello world app that looks like the following :
+
+---
+
+### Hello World  
+
+In today's lesson, I learned about the following things :
+* headers
+* footers
+* sections
+* lists
+* etc...
+
+
