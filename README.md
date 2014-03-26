@@ -1,5 +1,8 @@
 Learing RIA skills, and how to approach Rich Internet Applications
 ===
+
+See the [Learning RIA site](http://riaevangelist.github.io/learning-RIA/)
+
 ---
 ### What is a Rich Internet Application?  
 
