@@ -1,8 +1,8 @@
-Basic RIA App Knowledge
+Basic RIA App HTML Knowledge
 ===
 ***Learing RIA lesson 001***
 
-In this lesson we will cover the basics of HTML, CSS, Javascript 
+In this lesson we will cover the basics of HTML
 
 
 ### Basic App Structure in HTML
