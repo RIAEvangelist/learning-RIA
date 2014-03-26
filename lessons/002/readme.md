@@ -30,15 +30,8 @@ Selectors are ways that you can find or specify elements on which you would like
 | `tag` | targets elements of that tag |
 | `tag1` `tag2` | selects all `tag2`s which are decndants of `tag1` |
 | `tag1` > `tag2` | selelcts all `tag2`s that are immediate children of `tag1` |
-| `tag` : `psudo-selector` | selects all `tag`s which also match the `pseudo-selector` an example is `a:hover` which means all links when the mouse is hovering them. |
-| [`attr`] | Selects all elements which have an attribute of `attr` set. *** this should never be used because it is horribly inefficient ***|
-| `tag`[`attr`] | selects all `tag`s which have an attribute of `attr` set |
-| `tag`[`attr`="value"] | selects all `tag`s which have an attribute of `attr` set to "value" |
 | .`class` | selects all elements having a class type of `class` |
 | `tag`.`class`| selects all `tag`s having a class type of `class` |
-| #`id` | selects all elements with an id of `id` *** this course reccomends you do not ever use ids in CSS because there should only ever be one insytance of an ID on a page. The CSS implementation will allow developers to erroniously use the same ID multiple times to achive a certain look when they should be using classes instead. This can cause SEO and Javascript errors. Not to menltion it is not symantic ***|
-| `tag`#`id` | selects all `tag`s with an id of `id` *** this course reccomends you do not ever use ids in CSS because there should only ever be one insytance of an ID on a page. The CSS implementation will allow developers to erroniously use the same ID multiple times to achive a certain look when they should be using classes instead. This can cause SEO and Javascript errors. Not to menltion it is not symantic ***|
-| * | selects all elements |
 ---
 
 
