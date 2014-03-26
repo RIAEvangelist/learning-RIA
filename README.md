@@ -34,7 +34,7 @@ Knowing how to develop RIA and HTML5 apps can be very good for your productivity
 | Javascript | A Scripting language allowing you to add interactivity and logic to your HTML and CSS applications |
 |unix / linux| a base for many operating systems like Mac and Ubuntu which are open source and give you a lot of power when building applications, servers and every day computer interactions. We will not be getting very indepth with this, only deep enoug to get you started in this wide world of awesomeness. |
 | nodeJS     | A type of javascript which runs outside of the browser, allowing you to run javascript code as a server, or in a protected environment. |
-| Intel XDK  | A platform for packaging RIA applications for various devices |
+| Intel XDK  | A platform for packaging RIA applications for various computers and devices |
 
 ### Course Projects / Testing
 This course will not have traditional tests, instead your progress will be tracked by individual or group projects. These projects at first will be very basic helping to connect you with the languages you are learning in a tangible method you can see and play with. As the course progresses we will be developing actual applications that the company can use to make work more efficient for the various departments.
