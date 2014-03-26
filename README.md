@@ -19,7 +19,7 @@ On mobile devices including Android and iOS, 75% of all applications developed a
 
 Large enterprize companies are backing HTML5 for desktop and mobile use. Intel recently purchased a company called AppMobi and has enhanced and rebranded the product and team as tyhe intel XDK which allows development of RIA for multiple platforms, stores and devices. Another example is Adobe who started the RIA movement after purchasing Macromedia Flash. They are now actively promoting their new RIA platform, Brackets. This is an HTML5 app development tool for desktop apps.
 
-RIA has made a quiet move into the desktop and mobile platform without most people knowing that it was happening. The idea of platform specific or device dependant applications and code bases is slowly dieing out for many types of applications. Enterprise level applications have been migrating to browser based or installable RIA since 2011. This reduces their costs and decreases their overhead.
+RIA has made a quiet move into the desktop and mobile platform without most people knowing that it was happening. The idea of platform specific or device dependant applications and code bases is slowly dieing out for many types of applications. Enterprise level applications have been migrating to browser based or installable RIA since 2011. This reduces their costs and decreases their overhead. See more about [Current Developer Prefrences With App Development](http://venturebeat.com/2013/11/20/html5-vs-native-vs-hybrid-mobile-apps-3500-developers-say-all-three-please/#jp-carousel-862913) and RIA.
 
 Knowing how to develop RIA and HTML5 apps can be very good for your productivity and resume. It can also make you more relevant in this ever changing world of technology.
 
