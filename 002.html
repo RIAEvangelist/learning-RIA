@@ -1,0 +1,224 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Learning-ria by RIAEvangelist</title>
+
+    <link rel="stylesheet" href="/themes/dinky/stylesheets/styles.css">
+    <link rel="stylesheet" href="/themes/dinky/stylesheets/pygment_trac.css">
+    <script src="/themes/dinky/javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Learning-ria</h1>
+        <p class="header">Some basic lessons on learning RIA</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/RIAEvangelist/learning-RIA/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/RIAEvangelist/learning-RIA/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/RIAEvangelist/learning-RIA">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/RIAEvangelist">RIAEvangelist</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="basic-ria-app-css-knowledge" class="anchor" href="#basic-ria-app-css-knowledge"><span class="octicon octicon-link"></span></a>Basic RIA App CSS Knowledge</h1>
+
+<p><strong><em>Learing RIA lesson 002</em></strong></p>
+
+<p>In this lesson we will cover the basics of CSS. CSS stands for Cascading Stryle Sheet. CSS allows you to make things look pretty, fancy, smart, minimalistic, ugly etc. depending on what you do and how you use it. CSS will even let you do animations.</p>
+
+<h3>
+<a name="basic-app-structure-in-css" class="anchor" href="#basic-app-structure-in-css"><span class="octicon octicon-link"></span></a>Basic App Structure in CSS</h3>
+
+<hr><h4>
+<a name="basic-app-setup" class="anchor" href="#basic-app-setup"><span class="octicon octicon-link"></span></a>Basic app setup</h4>
+
+<pre><code>html,
+body{
+    min-width:100%;
+    min-height:100%;
+    margin:0;
+}
+
+body *{
+    position:relative;
+}
+</code></pre>
+
+<hr><h3>
+<a name="the-basics-on-css-selectors" class="anchor" href="#the-basics-on-css-selectors"><span class="octicon octicon-link"></span></a>The basics on CSS Selectors</h3>
+
+<p>Selectors are ways that you can find or specify elements on which you would like to apply css styling. Any tag name by itself is a selector. Any selector seperated by a space from the previous selector will try to match elements which are decendants of the first selector.</p>
+
+<table>
+<thead><tr>
+<th>selector</th>
+<th>selects</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>tag</code></td>
+<td>targets elements of that tag</td>
+</tr>
+<tr>
+<td>
+<code>tag1</code> <code>tag2</code>
+</td>
+<td>selects all <code>tag2</code>s which are decndants of <code>tag1</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>tag1</code> &gt; <code>tag2</code>
+</td>
+<td>selelcts all <code>tag2</code>s that are immediate children of <code>tag1</code>
+</td>
+</tr>
+<tr>
+<td>.<code>class</code>
+</td>
+<td>selects all elements having a class type of <code>class</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>tag</code>.<code>class</code>
+</td>
+<td>selects all <code>tag</code>s having a class type of <code>class</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>tag</code>:hover</td>
+<td>selects a <code>tag</code> only when it the mouse <code>hover</code>s over it</td>
+</tr>
+</tbody>
+</table><hr><h4>
+<a name="examples-" class="anchor" href="#examples-"><span class="octicon octicon-link"></span></a>Examples :</h4>
+
+<pre><code>a{
+    //css stuff
+}
+</code></pre>
+
+<p>would effect all links. To effect only links that are decendants of divs, you would use the following syntax :</p>
+
+<pre><code>div a{
+    //css stuff
+}
+</code></pre>
+
+<p>To effect only immediate children of divs you would</p>
+
+<h3>
+<a name="some-basic-css-properties" class="anchor" href="#some-basic-css-properties"><span class="octicon octicon-link"></span></a>Some basic CSS properties</h3>
+
+<p>Properties are things you can control. You set their values and it will change the way things are styled. You can see more about CSS properties on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN CSS Refrence</a>.</p>
+
+<p>properties are key value pairs like <code>font-size : 16px</code></p>
+
+<table>
+<thead><tr>
+<th>property</th>
+<th>definition</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>color</td>
+<td>Sets the color of text</td>
+</tr>
+<tr>
+<td>background-color</td>
+<td>Sets the color of the element background</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>Sets the opacity of an element which will effect its children</td>
+</tr>
+<tr>
+<td>font-family</td>
+<td>Sets the font to use for all text within the element</td>
+</tr>
+<tr>
+<td>font-size</td>
+<td>Sets the size of the text</td>
+</tr>
+<tr>
+<td>font-weight</td>
+<td>Sets the weight/strength/thickness/boldness of text</td>
+</tr>
+<tr>
+<td>text-align</td>
+<td>Sets the text to align left, right, center, or justify</td>
+</tr>
+<tr>
+<td>cursor</td>
+<td>Sets the tyoe of cursor shown.</td>
+</tr>
+<tr>
+<td>display</td>
+<td>Sets how the item is displayed in the design. visible, hidden, or none</td>
+</tr>
+<tr>
+<td>position</td>
+<td>How an element and it's parent are related spacially</td>
+</tr>
+<tr>
+<td>width</td>
+<td>the width of the element itself. This only works with "box" elements</td>
+</tr>
+<tr>
+<td>height</td>
+<td>the height of the element itself This only works with "box" elements</td>
+</tr>
+<tr>
+<td>float</td>
+<td>a strange rule that allows an element to stay to one side or the other and allows other elements to flow around it. This causes the dom to think the floated element has no height, so beware.</td>
+</tr>
+<tr>
+<td>padding</td>
+<td>adds space to the inside edges of an element</td>
+</tr>
+<tr>
+<td>margin</td>
+<td>adds space outside the edges of the element</td>
+</tr>
+<tr>
+<td>border</td>
+<td>creates a border around the edges of the element</td>
+</tr>
+<tr>
+<td>border-radius</td>
+<td>rounds the edges of the border</td>
+</tr>
+</tbody>
+</table><hr><h2>
+<a name="project" class="anchor" href="#project"><span class="octicon octicon-link"></span></a>Project</h2>
+
+<ol>
+<li>Create a screen that fills the page.</li>
+<li>Give the screen a header and a footer that are stuck to the top and bottom respectively.</li>
+<li>Give the header and footer the same background color and make them 40 pixels tall.</li>
+<li>Put some centered text in the header and footer.</li>
+<li>Give the non header footer part of the screen a different color.</li>
+<li>Put some text into the the non header footer area make sure it is not right up against the edge of the screen, it should have some space.</li>
+<li>When you mouse over the footer make it change color.</li>
+</ol>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  
+
+</body></html>
