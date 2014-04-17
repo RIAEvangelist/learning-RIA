@@ -10,7 +10,7 @@ External Stylesheets
 
 To properly use CSS without making HTML documents cumbersome and difficult to read, the best practice is to utilize *external stylesheets*. You can do this by adding a `link` element with a *rel* attribute of *stylesheet* to the `head` tag. 
 
-This will keep your document clean and allow you to include multiple CSS files. You might want to include more than one css file inorder to keep CSS for stand alone modules seperate. You must remember though that CSS files are cascading just like the CSS inside of them, so order is important.
+This will keep your document clean and allow you to include multiple CSS files. You might want to include more than one css file in order to keep CSS for stand alone modules seperate. You must remember though that CSS files are cascading just like the CSS inside of them, so order is important.
 
     <head>
         <link rel='stylesheet' href='css/myApp.css' />
