@@ -12,6 +12,8 @@ To properly use CSS without making HTML documents cumbersome and difficult to re
 
 This will keep your document clean and allow you to include multiple CSS files. You might want to include more than one css file in order to keep CSS for stand alone modules seperate. You must remember though that CSS files are cascading just like the CSS inside of them, so order is important.
 
+Another benifit to using these external stylesheets is reusability.
+
     <head>
         <link rel='stylesheet' href='css/myApp.css' />
         <link rel='stylesheet' href='css/myLogin.css' />
