@@ -34,21 +34,21 @@ Again like CSS we can add javascript to the page by remotely loading the file. U
 
     <script src='http://http://fontbomb.ilex.ca/bomb.js'></script>
     
-*** Note that you still need an opening and closing tag for rempote javascript. *** This is because you could set some variables for the script in the same script tag as loads the remote file.
+***Note that you still need an opening and closing tag for remote JavaScript.*** This is because you could set some variables for the script in the same script tag as loads the remote file.
 
 ---
 
-### Basic Javascript Use
+### Selecting elements with JavaScript
 
-*** Never put javascript in attributes on elements... never *** the penelty is death.
+***Never put JavaScript in attributes on elements... never*** the penalty is death.
 
 Selecting elements from the [DOM](https://developer.mozilla.org/en-US/docs/DOM) (Document Object Model) :
 
-    var a=document.querySelectorAll('.myClass');
+    var myElements=document.querySelectorAll('.myClass');
 
 The above will give you an array of elements with the class of `myClass`.
 
-    var a=document.querySelector('.myClass');
+    var myElement=document.querySelector('.myClass');
 
 *** note the ALL has been removed *** This will return only the first element which has the class of `myClass`
 
@@ -56,13 +56,79 @@ These queries will work with any selector that you can use in CSS, and they are 
 
 While the above are all native JS, it is possible to get better performance by using different methods like :
 
-    document.getElementsByClassName('myClass');
+    var myElements=document.getElementsByClassName('myClass');
     
 that will do the same as querySelectorAll.
 
-    document.getElementByID('myAwesomeID');
+    var myElement=document.getElementById('myAwesomeID');
     
-that will do the same as ` querySelector('#myAwesomeID') ` only with more effeciency.
+that will do the same as ` querySelector('#myAwesomeID') ` only with more efficiency.
+
+---
+
+### Adding events to elements
+
+Events allow users to interact with elements, but we need to tell the application that we are expecting certain types of interaction, and what to do when that interaction happens.
+
+Lets use an element with an ID for now to interact with
+
+*HTML*
+
+    <button id="myButton">Click Me!</button>
+    
+*JS*
+
+    var myButton=document.getElementById('myButton');
+    
+    myButton.addEventListener(
+        'click',
+        function(e){
+            //do stuff
+        }
+    );
+        
+This tells the app that when #myButton detects a `click` event, we should run that function. The passed in e represents the event data. We can make this more effecient if the button is clicked a lot by externalizing the function as follows :
+
+    function clickedButton(e){
+        //do stuff
+    }
+
+    myButton.addEventListener(
+        'click',
+        clickedButton
+    );
+
+***This event will not be bound if the button does not exist on the page when the JS is executed***
+
+---
+
+### Delaying JS execution until the HTML is loaded
+
+This may be necessary in situations like the one above when hyour javascript is in the head but the button is in the body. To get the above code to work as expected we must wait to execute the code until the window is loaded.
+
+    window.onload=function(e){
+        init();
+        bindEvents();
+    }
+
+    function init(){
+       //init stuff
+    }
+    
+    function bindEvents(){
+        //the above code for myButton
+    }
+
+The init and bindEvents function contents could be included inside of the onload function, however breaking them out makes the code much more managable. Maintainability is key in l;arge javascript applications.
+
+---
+
+### Modifying the Class List 
+
+    myButton.classList.add('clicked');
+    myButton.classList.remove('clicked');
+
+
 
 
 
