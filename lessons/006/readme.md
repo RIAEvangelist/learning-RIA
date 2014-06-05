@@ -31,7 +31,7 @@ The src attribute can be a URL of the audio file or the path to the file on the 
 This code example uses attributes of the `<audio>` element:
 
 | attribute    | use      |
----------------------------
+|---|---|
 |controls | Displays the standard HTML5 controls for the audio on the web page.|
 |autoplay | Makes the audio play automatically.|
 |loop     | Make the audio repeat (loop) automatically.|
@@ -41,7 +41,7 @@ This code example uses attributes of the `<audio>` element:
 The preload attribute is used in the audio element for buffering large files. It can take one of 3 values:
 
 |value | use       |
--------------------
+|---|---|
 |"none" | does not buffer the file  |
 |"auto" | buffers the media file  |
 |"metadata" | buffers only the metadata for the file  |
@@ -150,7 +150,7 @@ JS
     
 ***Parameters***
 |parameter |	Required/Optional |	Description |
--------------------------------------------------
+|---|---|----|
 |constraints | Required | The media types that support the LocalMediaStream object returned in the successCallback.|
 |successCallback | Required | The function on the calling application to invoke when passing the LocalMediaStream object.|
 |errorCallback | Optional | The function on the calling application to invoke if the call fails. Please note, this argument is required in recent versions of Firefox. Not providing this argument will throw a NS_ERROR_XPC_NOT_ENOUGH_ARGS error.
@@ -183,7 +183,7 @@ function(localMediaStream) {
 The getUserMedia function will call the function specified in the errorCallback with a code argument. The error codes are described as follows:
 
 |Error 	| Description |
------------------------
+|---|---|
 |PERMISSION_DENIED 	|The user denied permission to use a media device required for the operation.|
 |NOT_SUPPORTED_ERROR |A constraint specified is not supported by the browser.|
 |MANDATORY_UNSATISFIED_ERROR |No media tracks of the type specified in the constraints are found.|
