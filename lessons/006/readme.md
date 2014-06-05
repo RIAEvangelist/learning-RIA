@@ -7,6 +7,8 @@ Audio & Video in HTML
 
 HTML5 introduces built-in media support via the `<audio>` and `<video>` elements, offering the ability to easily embed media into HTML documents.
 
+---
+
 #### Embedding media
 Embedding media in your HTML document is trivial:
 
@@ -58,6 +60,7 @@ This plays the Ogg file in browsers supporting the Ogg format. If the browser do
 
 See Media events for a complete list of events associated with media playback. For details on media formats supported by different browsers, see Media formats supported by the audio and video elements.
 
+---
 #### Controlling media playback
 Once you've embedded media into your HTML document using the new elements, you can programmatically control them from JavaScript code. For example, to start (or restart) playback, you can do this:
 
@@ -97,15 +100,17 @@ Controlling an HTML5 audio player to play, pause, increase and decrease volume u
             }
         );
     </script>
-    
-### Webcam and Microphone Access
----
 
+---
+### Webcam and Microphone Access
+
+---
 #### Syntax
     
     navigator.getUserMedia ( constraints, successCallback, errorCallback );
 
-***Example***
+---
+#### Example
 Here's an example of using getUserMedia() with browser prefixes.
 
 HTML
@@ -116,6 +121,7 @@ HTML
             <video></video>
        </body>
    </html>
+
 JS
 
     navigator.getUserMedia = ( navigator.getUserMedia ||
@@ -148,15 +154,16 @@ JS
        console.log("getUserMedia not supported");
     }
     
-***Parameters***
+***Parameters***  
+
 |parameter |	Required/Optional |	Description |
 |---|---|----|
 |constraints | Required | The media types that support the LocalMediaStream object returned in the successCallback.|
 |successCallback | Required | The function on the calling application to invoke when passing the LocalMediaStream object.|
 |errorCallback | Optional | The function on the calling application to invoke if the call fails. Please note, this argument is required in recent versions of Firefox. Not providing this argument will throw a NS_ERROR_XPC_NOT_ENOUGH_ARGS error.
 
-***constraints***
 
+***constraints***  
 The constraints parameter is a MediaStreamConstraints object with two Boolean members: video and audio. These describe the media types supporting the LocalMediaStream object. Either or both must be specified to validate the constraint argument. If a specified constraint is not supported by the browser, getUserMedia invokes the errorCallback with the NOT_SUPPORTED_ERROR. If the browser cannot find any media track with the specified type, getUserMedia invokes the errorCallback with the MANDATORY_UNSATISFIED_ERR.
 
 If the value or the member is not specified in the object, the value for the member defaults to false. The following demonstrates how to set the constraints for both audio and video:
@@ -166,20 +173,20 @@ If the value or the member is not specified in the object, the value for the mem
         audio: true 
     }
     
-***successCallback***
 
+***successCallback***  
 The getUserMedia function will call the function specified in the successCallback with the LocalMediaStream object that contains the media stream. You may assign that object to the appropriate element and work with it, as shown in the following example:
 
-function(localMediaStream) {
-   var video = document.querySelector('video');
-   video.src = window.URL.createObjectURL(localMediaStream);
-   video.onloadedmetadata = function(e) {
-      // Do something with the video here.
-   };
-}
+    function(localMediaStream) {
+       var video = document.querySelector('video');
+       video.src = window.URL.createObjectURL(localMediaStream);
+       video.onloadedmetadata = function(e) {
+          // Do something with the video here.
+       };
+    }
 
-***errorCallback***
 
+***errorCallback***  
 The getUserMedia function will call the function specified in the errorCallback with a code argument. The error codes are described as follows:
 
 |Error 	| Description |
