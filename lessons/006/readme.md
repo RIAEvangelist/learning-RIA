@@ -86,6 +86,7 @@ This is all that is needed to make a basic chat server, ***Simple huh?***
 
 #### Project
 Use the example code to build a chat application that does the following :
+
 1. Sends messages
 2. Sends image URLs and displays them as an image on the other end
 3. Sends a color code that will change all of the connected users background colors
