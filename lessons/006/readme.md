@@ -1,6 +1,5 @@
 Web Sockets
 ===
-Web Sockets
 ---
 
 HTML5 introduces native websocket technology. It allows real time data transmission with both push and pull capabilities from the server and client. This is great for communication apps, multiplayer games, or dashboards that display real time data.
@@ -90,7 +89,7 @@ This is all that is needed to make a basic chat server, ***Simple huh?***
     	<head>
     		<script src="http://{SERVER ADDRESS HERE}:10000/socket.io/socket.io.js"></script>
     	</head>
-    	<body>
+    	<body>Web SocketsWeb Sockets
     		<div id="main">
     			<form id='loginForm'>
     				<fieldset>
@@ -205,6 +204,7 @@ after the last / you can put special notes, the ``i`` means case insensitive, wh
 
 That's all there is to the client. It is quite easy to make a chat app with node.js and socket.io
 
+---
 #### Project
 Use the example code to build a chat application that does the following :
 
