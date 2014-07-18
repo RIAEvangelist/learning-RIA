@@ -9,6 +9,7 @@ HTML5 introduces native websocket technology. It allows real time data transmiss
 
 #### Requirements
 For this lesson you will need
+
 1. Node JS or NVM
     a. npm which normally comes with node or NVM
 2. socket.io
