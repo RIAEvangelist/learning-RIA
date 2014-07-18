@@ -5,7 +5,7 @@
 				display:none;
 			}
 		</style>
-		<script src="http://192.168.1.95:10000/socket.io/socket.io.js"></script>
+		<script src="http://{SERVER ADDRESS HERE}:10000/socket.io/socket.io.js"></script>
 		<script>
 		    var socket,
 		        username;
@@ -15,7 +15,7 @@
     			    'click',
     			    function(e){
     				    e.preventDefault();
-    			    	socket = io.connect('http://192.168.1.95:10000');
+    			    	socket = io.connect('http://{SERVER ADDRESS HERE}:10000');
     			    	username = document.getElementById('username').value;
     				
     			    	serverListener();

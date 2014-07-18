@@ -40,7 +40,7 @@ Socket.io is a library that normalizes web socket protocalls across all types of
     	}
     );
     
-***Lest go line by line :***
+***Lets go line by line :***
 
     var io = require('socket.io').listen(10000);
     
@@ -84,10 +84,133 @@ This is all that is needed to make a basic chat server, ***Simple huh?***
 
 ---
 
+###### Chat Client
+**HTML**
+
+    <html>
+    	<head>
+    		<script src="http://{SERVER ADDRESS HERE}:10000/socket.io/socket.io.js"></script>
+    	</head>
+    	<body>
+    		<div id="main">
+    			<form id='loginForm'>
+    				<fieldset>
+    					<ledgend>Login</ledgend>
+    					<label for='username'>Username:</label> 
+    					<input type="text" name="username" id="username" />
+    					<button id="login">Log in</button>
+    				</fieldset>
+    			</form>
+    			<section class='hidden' id='chatRoom'>
+    				<textarea id="message"></textarea>
+    				<button type="button" id="send">Send</button>
+    				<br>
+    				<div id="messages"></div>
+    			</section>
+    		</div>
+    	</body>
+    </html>
+
+The most important thing to notice here is this line which imports the socket.io library so you can start using socket.io for websockets :
+
+    <script src="http://{SERVER ADDRESS HERE}:10000/socket.io/socket.io.js"></script>
+
+** CSS **
+
+    .hidden{
+        display:none;
+    }
+    
+** JS **
+###### Connecting to Server
+
+    var socket,
+        username;
+
+    window.onload = function() {
+	    document.getElementById('login').addEventListener(
+		    'click',
+		    function(e){
+			    e.preventDefault();
+		    	socket = io.connect('http://{SERVER ADDRESS HERE}:10000');
+		    	username = document.getElementById('username').value;
+			
+		    	serverListener();
+		    }
+        );
+    };
+
+Since the login button is inside of a form we need to prevent the default action, which is to submit the form, we do this with the following line :
+
+    e.preventDefault();
+
+We connect to the Chat server with the following line
+
+	socket = io.connect('http://{SERVER ADDRESS HERE}:10000');
+
+
+
+###### Sending/Receiving Messages
+
+    function serverListener() {
+		document.querySelector('#loginForm').classList.add('hidden');
+		document.querySelector('#chatRoom').classList.remove('hidden');
+
+		socket.on(
+			'message', 
+			function(data) {
+			    var theMessage=data.username + ' says : ' + data.message;
+				
+                
+		    	document.getElementById('messages').innerHTML = (
+					theMessage + '<br>' +
+					document.getElementById('messages').innerHTML 
+				);
+			}
+		);
+
+		document.getElementById('send').addEventListener(
+			'click',
+			function(){
+				document.getElementById('message').value=document.getElementById('message').value.replace(
+					/[\n\r]/ig,
+					'<br>'
+				);
+		    		
+				socket.emit(
+					'message', 
+					{
+						username: username,	
+						message : document.getElementById('message').value
+					}
+				);
+
+				document.getElementById('message').value='';
+			}
+		);
+    };
+
+We send the ``username`` and ``message`` via the ``socket.emit`` method above, and when we recieve a message, we parse it together using the data from the event.  
+
+When we display the message, we are displaying it as HTML, so we need to convert new lines and carriage returns from the server to HTML line breaks. The below code finds these and does that with a Regular Expression.  
+
+/.../ is the format for a RegEx.
+[...] means find all the chars between the brackets
+``\n`` is a new line and ``\r`` is a carriage return
+after the last / you can put special notes, the ``i`` means case insensitive, which we probably don't really need here, and the ``g`` means global, so it will find all of the matches. Without ``g`` this would only replace the first match.
+
+    document.getElementById('message').value=document.getElementById('message').value.replace(
+		/[\n\r]/ig,
+		'<br>'
+	);
+
+That's all there is to the client. It is quite easy to make a chat app with node.js and socket.io
+
 #### Project
 Use the example code to build a chat application that does the following :
 
-1. Sends messages
+1. Uses seperate HTML, CSS and JS files
+2. Sends messages
 2. Sends image URLs and displays them as an image on the other end
 3. Sends a color code that will change all of the connected users background colors
 
