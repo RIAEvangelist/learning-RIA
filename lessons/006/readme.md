@@ -1,9 +1,6 @@
-User Media in RIA
+Web Sockets
 ===
 ***Learing RIA lesson 006***
-
-Web Sockets
----
 
 HTML5 introduces native websocket technology. It allows real time data transmission with both push and pull capabilities from the server and client. This is great for communication apps, multiplayer games, or dashboards that display real time data.
 
@@ -169,8 +166,8 @@ HTML5 introduces native websocket technology. It allows real time data transmiss
 For this lesson you will need
 
 1. Node JS or NVM
-    a. npm which normally comes with node or NVM
-2. socket.io
+2. npm which normally comes with node or NVM
+3. socket.io
 
 ---
 
@@ -315,66 +312,6 @@ We connect to the Chat server with the following line
 		document.querySelector('#loginForm').classList.add('hidden');
 		document.querySelector('#chatRoom').classList.remove('hidden');
 
-		socket.on(
-			'message', 
-			function(data) {
-			    var theMessage=data.username + ' says : ' + data.message;
-				
-                
-		    	document.getElementById('messages').innerHTML = (
-					theMessage + '<br>' +
-					document.getElementById('messages').innerHTML 
-				);
-			}
-		);
-
-		document.getElementById('send').addEventListener(
-			'click',
-			function(){
-				document.getElementById('message').value=document.getElementById('message').value.replace(
-					/[\n\r]/ig,
-					'<br>'
-				);
-		    		
-				socket.emit(
-					'message', 
-					{
-						username: username,	
-						message : document.getElementById('message').value
-					}
-				);
-
-				document.getElementById('message').value='';
-			}
-		);
-    };
-
-We send the ``username`` and ``message`` via the ``socket.emit`` method above, and when we recieve a message, we parse it together using the data from the event.  
-
-When we display the message, we are displaying it as HTML, so we need to convert new lines and carriage returns from the server to HTML line breaks. The below code finds these and does that with a Regular Expression.  
-
-/.../ is the format for a RegEx.
-[...] means find all the chars between the brackets
-``\n`` is a new line and ``\r`` is a carriage return
-after the last / you can put special notes, the ``i`` means case insensitive, which we probably don't really need here, and the ``g`` means global, so it will find all of the matches. Without ``g`` this would only replace the first match.
-
-    document.getElementById('message').value=document.getElementById('message').value.replace(
-		/[\n\r]/ig,
-		'<br>'
-	);
-
-That's all there is to the client. It is quite easy to make a chat app with node.js and socket.io
-
-#### Project
-Use the example code to build a chat application that does the following :
-
-1. Uses seperate HTML, CSS and JS files
-2. Sends messages
-2. Sends image URLs and displays them as an image on the other end
-3. Sends a color code that will change all of the connected users background colors
-
-
-> Written with [StackEdit](https://stackedit.io/).
 		socket.on(
 			'message', 
 			function(data) {
