@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<style>
+			.hidden{
+				display:none;
+			}
+		</style>
+		<script src="http://192.168.50.93:10000/socket.io/socket.io.js"></script>
+		<script>
+		    var socket,
+		        username;
+
+		    window.onload = function() {
+			    document.getElementById('login').addEventListener(
+    			    'click',
+    			    function(e){
+    				    e.preventDefault();
+    			    	socket = io.connect('http://192.168.50.93:10000');
+    			    	username = document.getElementById('username').value;
+    				
+    			    	serverListener();
+    			    }
+                );
+		    };
+
+		    function serverListener() {
+    			document.querySelector('#loginForm').classList.add('hidden');
+    			document.querySelector('#chatRoom').classList.remove('hidden');
+    
+    			socket.on(
+    				'message', 
+    				function(data) {
+    				    var theMessage=data.username + ' says : ' + data.message;
+    					
+                        
+    			    	document.getElementById('messages').innerHTML = (
+    						theMessage + '<br>' +
+    						document.getElementById('messages').innerHTML 
+    					);
+    				}
+    			);
+    
+    			document.getElementById('send').addEventListener(
+    				'click',
+    				function(){
+    					document.getElementById('message').value=document.getElementById('message').value.replace(
+    						/[\n\r]/ig,
+    						'<br>'
+    					);
+    			    		
+    					socket.emit(
+    						'message', 
+    						{
+    							username: username,	
+    							message: document.getElementById('message').value
+    						}
+    					);
+    
+    					document.getElementById('message').value='';
+    				}
+    			);
+		    };
+		</script>
+	</head>
+	<body>
+		<div id="main">
+			<form id='loginForm'>
+				<fieldset>
+					<ledgend>Login</ledgend>
+					<label for='username'>Username:</label> 
+					<input type="text" name="username" id="username" />
+					<button id="login">Log in</button>
+				</fieldset>
+			</form>
+			<section class='hidden' id='chatRoom'>
+				<textarea id="message"></textarea>
+				<button type="button" id="send">Send</button>
+				<br>
+				<div id="messages"></div>
+			</section>
+		</div>
+	</body>
+</html>
