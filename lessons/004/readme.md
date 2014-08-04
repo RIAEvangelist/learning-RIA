@@ -130,8 +130,8 @@ The init and bindEvents function contents could be included inside of the onload
 
 ### Project
 
-1) Take the bouncing ball from lesson 003 and make it clickable.
-2) When you click the ball have it change color using classList.
+1. Take the bouncing ball from lesson 003 and make it clickable.
+2. When you click the ball have it change color using classList.
 
 
 
