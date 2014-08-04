@@ -128,8 +128,10 @@ The init and bindEvents function contents could be included inside of the onload
     myButton.classList.add('clicked');
     myButton.classList.remove('clicked');
 
+### Project
 
-
+1) Take the bouncing ball from lesson 003 and make it clickable.
+2) When you click the ball have it change color using classList.
 
 
 
