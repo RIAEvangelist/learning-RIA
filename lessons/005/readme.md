@@ -198,8 +198,9 @@ The getUserMedia function will call the function specified in the errorCallback 
 ### Project
 
 Create a video player that
-1) Plays
-2) Pauses
-3) Changes volume
-4) Has a scrubber
-5) Has at least 2 Skins that you can change using classList 
+
+1. Plays
+2. Pauses
+3. Changes volume
+4. Has a scrubber
+5. Has at least 2 Skins that you can change using classList 
