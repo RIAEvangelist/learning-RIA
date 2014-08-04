@@ -68,4 +68,4 @@ You can transition any CSS rule, like font-size, width, height, color etc.
 Project
 ---
 
-Create a css ball that bounces.
+Create a css ball that bounces when you hover over it, kind of like you are dribbling a basketball.
